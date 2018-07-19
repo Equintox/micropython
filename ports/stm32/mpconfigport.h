@@ -293,6 +293,9 @@ extern const struct _mp_obj_module_t mp_module_c_sample;
     \
 	/* C Sample callback obj */ \
     mp_obj_t c_sample_callback_obj; \
+    \
+	/* Function obj */ \
+    mp_obj_t my_printf; \
 
 
 // type definitions for the specific machine

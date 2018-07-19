@@ -234,6 +234,7 @@ SRC_C = \
 	can.c \
 	usb.c \
 	wdt.c \
+	myprintf.c \
 	calctest.c \
 	c_sample.c \
 	gccollect.c \
