@@ -4,6 +4,7 @@
 #include "py/binary.h"
 #include "portmodules.h"
 #include "calctest.h"
+#include "myprintf.h"
 #include <string.h>
 #include <stdio.h>
 
@@ -96,11 +97,15 @@ STATIC MP_DEFINE_CONST_FUN_OBJ_2(c_sample_func_add_obj, c_sample_func_add);
 
 
 //printf from c-lib
-STATIC mp_obj_t c_sample_func_print_from_lib(mp_obj_t arg1) {
-	print_from_lib(mp_obj_str_get_str(arg1));
+STATIC mp_obj_t c_sample_my_printf(mp_obj_t arg1) {
+
+
+
+	my_printf(mp_obj_str_get_str(arg1));
+
     return mp_const_none;
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_1(c_sample_func_print_from_lib_obj, c_sample_func_print_from_lib);
+STATIC MP_DEFINE_CONST_FUN_OBJ_1(c_sample_my_printf_obj, c_sample_my_printf);
 
 
 STATIC const mp_map_elem_t c_sample_globals_table[] = {
@@ -115,7 +120,7 @@ STATIC const mp_map_elem_t c_sample_globals_table[] = {
     { MP_OBJ_NEW_QSTR(MP_QSTR_func_int), (mp_obj_t)&c_sample_func_int_obj },
     { MP_OBJ_NEW_QSTR(MP_QSTR_func_str), (mp_obj_t)&c_sample_func_str_obj },
 	{ MP_OBJ_NEW_QSTR(MP_QSTR_func_add), (mp_obj_t)&c_sample_func_add_obj },
-	{ MP_OBJ_NEW_QSTR(MP_QSTR_func_print_from_lib), (mp_obj_t)&c_sample_func_print_from_lib_obj },
+	{ MP_OBJ_NEW_QSTR(MP_QSTR_my_printf), (mp_obj_t)&c_sample_my_printf_obj },
 };
 
 STATIC MP_DEFINE_CONST_DICT(mp_module_c_sample_globals, c_sample_globals_table);
