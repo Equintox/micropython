@@ -36,10 +36,13 @@ SRC_C = \
 	ports/unix/modmachine.c \
 	ports/unix/modtime.c \
 	ports/unix/gccollect.c \
+	py/objstr.c \
 	windows_mphal.c \
 	realpath.c \
 	init.c \
 	sleep.c \
+	can_lib.c \
+	can.c \
 
 OBJ = $(PY_O) $(addprefix $(BUILD)/, $(SRC_C:.c=.o))
 
