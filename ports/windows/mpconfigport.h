@@ -119,6 +119,7 @@
 
 extern const struct _mp_print_t mp_stderr_print;
 
+
 #ifdef _MSC_VER
 #define MICROPY_GCREGS_SETJMP       (1)
 #define MICROPY_USE_INTERNAL_PRINTF (0)
@@ -176,10 +177,12 @@ void mp_hal_dupterm_tx_strn(const char *str, size_t len);
 
 extern const struct _mp_obj_module_t mp_module_os;
 extern const struct _mp_obj_module_t mp_module_time;
+extern const struct _mp_obj_module_t mp_module_can;
 #define MICROPY_PORT_BUILTIN_MODULES \
     { MP_ROM_QSTR(MP_QSTR_utime), MP_ROM_PTR(&mp_module_time) }, \
     { MP_ROM_QSTR(MP_QSTR_umachine), MP_ROM_PTR(&mp_module_machine) }, \
     { MP_ROM_QSTR(MP_QSTR_uos), MP_ROM_PTR(&mp_module_os) }, \
+	{ MP_ROM_QSTR(MP_QSTR_can), MP_ROM_PTR(&mp_module_can) }, \
 
 #if MICROPY_USE_READLINE == 1
 #define MICROPY_PORT_ROOT_POINTERS \
