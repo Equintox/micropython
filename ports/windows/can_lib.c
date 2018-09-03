@@ -1,6 +1,5 @@
 #include "can_lib.h"
 
-
 //Function declarations
 int load_dll();
 int unload_dll();
