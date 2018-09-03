@@ -1,5 +1,9 @@
 #include "can_lib.h"
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b7a000461adf8b32b2d0cafe7dd439094c0e673d
 //Function declarations
 int load_dll();
 int unload_dll();
